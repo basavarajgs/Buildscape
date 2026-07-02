@@ -1,0 +1,10 @@
+● Working on Buildscape construction website V2.
+  Path: C:\Users\C5376809\Desktop\buildscape-v2\
+  Files: index.html, style.css, script.js, images/, videos/
+  Colors: White + Navy (#1a1a2e) + Orange (#f97316)
+  Font: Inter + Playfair Display
+  Sections: Home, About, Services, Process, Projects, Office, Contact
+  Phone: +91 98440 48720 / +91 95357 03246
+  Email: buildscape.co@gmail.com
+  Instagram: @buildscape_ | WhatsApp: 9844048720
+  Please read files before making changes.

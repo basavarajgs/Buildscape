@@ -164,6 +164,61 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   setTimeout(function() { note.textContent = ''; }, 4000);
 });
 
+// ===== VIDEO TOUR =====
+function playVideo(wrapper, url) {
+  var iframe = document.createElement('iframe');
+  iframe.src = url + '?autoplay=1';
+  iframe.allow = 'autoplay; encrypted-media';
+  iframe.allowFullscreen = true;
+  wrapper.innerHTML = '';
+  wrapper.appendChild(iframe);
+}
+
+// ===== QUOTE CALCULATOR =====
+function calculateQuote() {
+  var type = document.getElementById('calcType').value;
+  var area = parseFloat(document.getElementById('calcArea').value);
+  var floors = parseFloat(document.getElementById('calcFloors').value);
+  var grade = document.getElementById('calcGrade').value;
+
+  if (!area || area < 100) {
+    alert('Please enter a valid plot area (minimum 100 sq. ft.)');
+    return;
+  }
+
+  var ratePerSqft = { residential: 1800, commercial: 2200, renovation: 900, peb: 1400 };
+  var gradeMultiplier = { basic: 1, standard: 1.3, premium: 1.7 };
+  var baseRate = ratePerSqft[type] * gradeMultiplier[grade];
+  var totalArea = area * floors;
+  var estimated = baseRate * totalArea;
+  var low = Math.round(estimated * 0.9);
+  var high = Math.round(estimated * 1.1);
+
+  function formatINR(num) {
+    if (num >= 10000000) return '₹' + (num / 10000000).toFixed(2) + ' Cr';
+    if (num >= 100000) return '₹' + (num / 100000).toFixed(2) + ' Lac';
+    return '₹' + num.toLocaleString('en-IN');
+  }
+
+  document.getElementById('resultAmount').textContent = formatINR(low) + ' – ' + formatINR(high);
+
+  var typeLabels = { residential: 'Residential', commercial: 'Commercial', renovation: 'Renovation', peb: 'PEB Structure' };
+  var gradeLabels = { basic: 'Basic (Economy)', standard: 'Standard', premium: 'Premium' };
+  var floorLabels = { 1: 'G', 2: 'G+1', 3: 'G+2', 4: 'G+3', 5: 'G+4+' };
+
+  document.getElementById('resultBreakdown').innerHTML =
+    '<div class="breakdown-item"><span>Construction Type</span><span>' + typeLabels[type] + '</span></div>' +
+    '<div class="breakdown-item"><span>Plot Area</span><span>' + area + ' sq. ft.</span></div>' +
+    '<div class="breakdown-item"><span>Floors</span><span>' + floorLabels[floors] + '</span></div>' +
+    '<div class="breakdown-item"><span>Quality Grade</span><span>' + gradeLabels[grade] + '</span></div>' +
+    '<div class="breakdown-item"><span>Rate per sq. ft.</span><span>₹' + Math.round(baseRate).toLocaleString('en-IN') + '</span></div>' +
+    '<div class="breakdown-item"><span>Total Built-up Area</span><span>' + totalArea.toLocaleString('en-IN') + ' sq. ft.</span></div>';
+
+  var result = document.getElementById('calcResult');
+  result.style.display = 'block';
+  result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
 // ===== PROJECT FILTER =====
 document.querySelectorAll('.filter-btn').forEach(function(btn) {
   btn.addEventListener('click', function() {
