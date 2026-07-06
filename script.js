@@ -7,9 +7,17 @@ var projects = {
     location: 'Channarayapatna, Karnataka', type: 'Residential',
     area: '3,000 sq. ft.', duration: '12 Months', status: 'Completed', client: 'Basavaraju G S',
     media: [
-      { type: 'image', src: 'images/Project1-front.jpg', thumb: 'images/Project1-front.jpg' },
-      { type: 'image', src: 'images/Project1-side.jpg', thumb: 'images/Project1-side.jpg' },
-      { type: 'image', src: 'images/Project1-back.jpg', thumb: 'images/Project1-back.jpg' }
+      { type: 'image', src: 'images/Project1/Project1-front.jpg', thumb: 'images/Project1/Project1-front.jpg' },
+      { type: 'image', src: 'images/Project1/Project1-side.jpg', thumb: 'images/Project1/Project1-side.jpg' },
+      { type: 'image', src: 'images/Project1/Project1-back.jpg', thumb: 'images/Project1/Project1-back.jpg' },
+      { type: 'image', src: 'images/Project1/Project1-full.jpg', thumb: 'images/Project1/Project1-full.jpg' },
+      { type: 'image', src: 'images/Project1/Project1-1.jpg', thumb: 'images/Project1/Project1-1.jpg' },
+      { type: 'image', src: 'images/Project1/Project1-2.jpg', thumb: 'images/Project1/Project1-2.jpg' },
+      { type: 'image', src: 'images/Project1/Project1-3.jpg', thumb: 'images/Project1/Project1-3.jpg' },
+      { type: 'image', src: 'images/Project1/Project1-4.jpg', thumb: 'images/Project1/Project1-4.jpg' },
+      { type: 'image', src: 'images/Project1/Project1-5.jpg', thumb: 'images/Project1/Project1-5.jpg' },
+      { type: 'image', src: 'images/Project1/Project1-6.jpg', thumb: 'images/Project1/Project1-6.jpg' }
+
     ],
     highlights: [
       'Spacious <b>4BHK Triplex Residence</b> with thoughtfully planned layouts',

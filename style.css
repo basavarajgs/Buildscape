@@ -148,6 +148,7 @@ body { font-family: 'Inter', sans-serif; color: var(--navy); background: var(--w
   font-weight: 600; font-size: 0.88rem; color: var(--navy);
 }
 .hero-badge i { color: var(--primary); font-size: 1.2rem; }
+.hero-badge-logo { width: 28px; height: 28px; object-fit: contain; border-radius: 4px; }
 
 /* ===== ABOUT ===== */
 .about { background: var(--lighter); }
